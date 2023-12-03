@@ -27,9 +27,10 @@ public class ShoppingBasketTests
         //  Act
         basket.AddItem("A", 3);
         basket.AddItem("B", 1);
+        var actual = basket.CalculateTotal();
 
         //  Assert
-        Assert.That(basket.CalculateTotal(), Is.GreaterThan(0));
+        Assert.That(actual, Is.GreaterThan(0));
     }
 
     [Test]
@@ -39,9 +40,10 @@ public class ShoppingBasketTests
         var basket = _basket;
 
         //  Act
+        var actual = basket.CalculateTotal();
 
         //  Assert
-        Assert.That(basket.CalculateTotal(), Is.EqualTo(0));
+        Assert.That(actual, Is.EqualTo(0));
     }
 
     #endregion
@@ -56,9 +58,10 @@ public class ShoppingBasketTests
 
         //  Act
         basket.AddItem("A", 3);
+        var actual = basket.CalculateTotal();
 
         //  Assert
-        Assert.That(basket.CalculateTotal(), Is.EqualTo(30));
+        Assert.That(actual, Is.EqualTo(30));
     }
 
     [Test]
@@ -72,9 +75,10 @@ public class ShoppingBasketTests
         basket.AddItem("B", 1);
         basket.AddItem("C", 1);
         basket.AddItem("D", 1);
+        var actual = basket.CalculateTotal();
 
         //  Assert
-        Assert.That(basket.CalculateTotal(), Is.EqualTo(120));
+        Assert.That(actual, Is.EqualTo(120));
     }
 
     [Test]
@@ -88,9 +92,10 @@ public class ShoppingBasketTests
         basket.AddItem("B", 4); //55
         basket.AddItem("C", 2); //80
         basket.AddItem("D", 7); //302.5
+        var actual = basket.CalculateTotal();
 
         //  Assert
-        Assert.That(basket.CalculateTotal(), Is.EqualTo(457.5m));
+        Assert.That(actual, Is.EqualTo(457.5m));
     }
 
     #endregion

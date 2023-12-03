@@ -77,5 +77,21 @@ public class ShoppingBasketTests
         Assert.That(basket.CalculateTotal(), Is.EqualTo(120));
     }
 
+    [Test]
+    public void MultipleItemsWithPromotionsCalculatesPriceCorrectly()
+    {
+        //  Arrange
+        var basket = _basket;
+
+        //  Act
+        basket.AddItem("A", 2); //20
+        basket.AddItem("B", 4); //55
+        basket.AddItem("C", 2); //80
+        basket.AddItem("D", 7); //302.5
+
+        //  Assert
+        Assert.That(basket.CalculateTotal(), Is.EqualTo(457.5m));
+    }
+
     #endregion
 }

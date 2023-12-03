@@ -6,6 +6,7 @@ public class ShoppingBasket : IShoppingBasket
 {
     private readonly IPricingService _pricingService;
 
+    //  will internally hold all the items added to basket
     private readonly Dictionary<string, int> _items = new();
 
     public ShoppingBasket(IPricingService pricingService)
@@ -31,6 +32,7 @@ public class ShoppingBasket : IShoppingBasket
 
         foreach (var item in _items)
         {
+            //  key = sku, value = quantity
             total += CalculateItemTotal(item.Key, item.Value);
         }
 
